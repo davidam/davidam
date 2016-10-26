@@ -241,6 +241,19 @@
   > "'(setq " var " (skeleton-read \"" var ": \"))"
 )
 
+(define-skeleton davidam-skeleton-ruby-case
+  "Insert a skeleton statement."
+  ""
+  '(setq str (skeleton-read "Variable Name? "))
+  > "case " str \n
+  ( "condition, %s: "
+   > "when " str \n
+   > _ \n)
+  > "else" \n
+  > _ \n
+  > "end" \n
+  )
+
 (define-skeleton davidam-skeleton-add-copyright
   "Add copyright note"
   ""
