@@ -247,12 +247,26 @@
   '(setq str (skeleton-read "Variable Name? "))
   > "case " str \n
   ( "condition, %s: "
-   > "when " str \n
-   > _ \n)
+  > "when " str \n
+  > _ \n)
   > "else" \n
   > _ \n
   > "end" \n
   )
+
+(define-skeleton davidam-skeleton-ruby-test
+  "Insert a skeleton statement."
+  ""
+  '(setq class (skeleton-read "Class Name? "))
+  > "RSpec.describe \"" class "\" do\n"
+  ( "Test Name: %s "
+  > "it \"" str "\" do \n"
+  > "end" \n
+  )
+  > "end" \n
+  )
+  
+
 
 (define-skeleton davidam-skeleton-add-copyright
   "Add copyright note"
