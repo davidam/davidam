@@ -19,7 +19,8 @@
 ;; Boston, MA 02110-1301 USA,
 
 
-
+;; To collapse functions
+(outline-minor-mode) ;; You can use it with: M-x hide-sublevels, M-x hide-others, M-x show-subtree, M-x hide-subtree, M-x show-all
 
 (defun davidam-org-envolve-numbered-list()
   "Itemize some lines as a numbered list"
