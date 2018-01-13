@@ -28,6 +28,9 @@
 (setq user-mail-address "davidam@gnu.org")
 (put 'upcase-region 'disabled nil)
 
+;; TO COLLAPSE FUNCTIONS
+(outline-minor-mode) ;; You can use it with: M-x hide-sublevels, M-x hide-others, M-x show-subtree, M-x hide-subtree, M-x show-all
+
 ;; AUTOCOMPLETE
 (load "/home/davidam/git/popup-el/popup.el")
 (load "/home/davidam/git/auto-complete/auto-complete.el")
