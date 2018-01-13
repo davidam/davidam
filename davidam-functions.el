@@ -272,8 +272,8 @@
   ""
   > ";; Copyright (C) " (format-time-string "%Y") "  David Arroyo Menéndez" \n
   > "" \n
-  > ";; Author: David Arroyo Menéndez <davidam@gnu.org>" \n
-  > ";; Maintainer: David Arroyo Menéndez <davidam@gnu.org>" \n
+  > ";; Author: David Arroyo Menéndez <" user-mail-address ">" \n
+  > ";; Maintainer: David Arroyo Menéndez <" user-mail-address ">" \n
   > "" \n
   > ";; This file is free software; you can redistribute it and/or modify" \n
   > ";; it under the terms of the GNU General Public License as published by" \n
@@ -303,8 +303,8 @@
   ""
   > "# Copyright (C) " (format-time-string "%Y") "  David Arroyo Menéndez" \n
   > "" \n
-  > "# Author: David Arroyo Menéndez <davidam@gnu.org>" \n
-  > "# Maintainer: David Arroyo Menéndez <davidam@gnu.org>" \n
+  > "# Author: David Arroyo Menéndez <" user-mail-address ">" \n
+  > "# Maintainer: David Arroyo Menéndez <" user-mail-address ">" \n
   > "" \n
   > "# This file is free software; you can redistribute it and/or modify" \n
   > "# it under the terms of the GNU General Public License as published by" \n
