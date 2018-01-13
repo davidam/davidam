@@ -1,7 +1,7 @@
 ;; Copyright (C) 2013  David Arroyo Menéndez
 
-;; Author: David Arroyo Menéndez <davidam@es.gnu.org>
-;; Maintainer: David Arroyo Menéndez <davidam@es.gnu.org>
+;; Author: David Arroyo Menéndez <davidam@gnu.org>
+;; Maintainer: David Arroyo Menéndez <davidam@gnu.org>
 
 ;; This file is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
