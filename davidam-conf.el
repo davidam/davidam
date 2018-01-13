@@ -33,7 +33,7 @@
 
 ;; AUTOCOMPLETE
 (load "/home/davidam/git/popup-el/popup.el")
-(load "/home/davidam/git/auto-complete/auto-complete.el")
+;;(load "/home/davidam/git/auto-complete/auto-complete.el")
 
 ;; RUBY
 (add-to-list 'auto-mode-alist
@@ -48,8 +48,8 @@
  '((python . t)))
 
 ;; DRUPAL
-(setq drupal-el-path "~/bzr/drupal-el/")
-(load (concat drupal-el-path "drupal.el"))
+;; (setq drupal-el-path "~/bzr/drupal-el/")
+;; (load (concat drupal-el-path "drupal.el"))
 
 ;; ORG-MODE	
 (load "~/git/org-mode/contrib/lisp/org-license.el")
