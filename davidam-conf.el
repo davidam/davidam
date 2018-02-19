@@ -54,6 +54,7 @@
 ;; ORG-MODE	
 (load "~/git/org-mode/contrib/lisp/org-license.el")
 (load "~/git/org-mode/contrib/lisp/org-effectiveness.el")
+(setq org-agenda-files '("~/TODO.org.gpg" "~/git/davidam.github.io/emacs/public.org"))
 
 ;;;; PO-MODE ;;;;
 (require 'po-mode)
