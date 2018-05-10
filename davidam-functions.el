@@ -275,7 +275,7 @@
   
 
 
-(define-skeleton davidam-skeleton-add-copyright
+(define-skeleton davidam-skeleton-elisp-copyright
   "Add copyright note"
   ""
   > ";; Copyright (C) " (format-time-string "%Y") "  David Arroyo Menéndez" \n
@@ -300,14 +300,14 @@
 ) 
 
 (define-skeleton davidam-skeleton-python-bin-and-utf8
-  "Insert a skeleton statement."
+  "Insert Python header."
   ""
-  > "#!/usr/bin/python"
+  > "#!/usr/bin/python" \n
   > "# -*- coding: utf-8 -*-" \n  
 )
 
-(define-skeleton davidam-skeleton-python-copyright
-  "Insert a skeleton statement."
+(define-skeleton davidam-skeleton-shell-copyright
+  "Insert Shell Copyright."
   ""
   > "# Copyright (C) " (format-time-string "%Y") "  David Arroyo Menéndez" \n
   > "" \n
