@@ -306,9 +306,11 @@
   > "# -*- coding: utf-8 -*-" \n  
 )
 
+
 (define-skeleton davidam-skeleton-shell-copyright
   "Insert Shell Copyright."
   ""
+  > "#!/bin/bash" \n  
   > "# Copyright (C) " (format-time-string "%Y") "  David Arroyo Menéndez" \n
   > "" \n
   > "# Author: David Arroyo Menéndez <" user-mail-address ">" \n
