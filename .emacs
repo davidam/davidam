@@ -20,3 +20,6 @@
 
 (load "/home/davidam/git/davidam/davidam-conf.el")
 (load "/home/davidam/git/davidam/davidam-functions.el")
+(load "/home/davidam/git/davidam/davidam-exercises.el")
+(load "/home/davidam/git/davidam/davidam-skeletons.el")
+(put 'downcase-region 'disabled nil)
