@@ -18,7 +18,15 @@
 ;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
 ;; Boston, MA 02110-1301 USA,
 
-
+(defun davidam-org-agenda-timeline-all (&optional arg)
+  (interactive "P")
+  (with-temp-buffer
+    (dolist (org-agenda-file org-agenda-files)
+      (insert-file-contents org-agenda-file nil)
+      (end-of-buffer)
+      (newline))
+    (write-file "/tmp/timeline.org")
+    (org-agenda arg "L")))
 
 (defun davidam-org-envolve-numbered-list()
   "Itemize some lines as a numbered list"
