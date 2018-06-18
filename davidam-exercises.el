@@ -92,42 +92,23 @@ símbolos en una definición."
 ;;      (kill-buffer buffer)
       (message "Tamaño en palabras de las funciones: %s " lengths-list))))
 
-;; (defun files-in-below-directory (directory)
-;;   "Lista los ficheros .el en DIRECTORIO y en sus subdirectorios."
-;; ;; Aunque la función será usada no interactivamente,
-;; ;; será fácil chequear si lo hacemos interactivo.
-;; ;; El directorio tendrá un nombre tal como
-;; ;; "/usr/local/share/emacs/22.1.1/lisp/"
-;;   (interactive "DNombre del Directorio: ")
-;;   (let (el-files-list
-;; 	(current-directory-list
-;; 	 (directory-files-and-attributes directory t)))
-;;     ;; mientras estamos en el directorio actual
-;;     (while current-directory-list
-;;       (cond
-;; ;; chequee para ver si el nombre del fichero finaliza en ‘.el’
-;; ;; y si es así, añade su nombre a una lista.
-;;        ((equal ".el" (substring (car (car current-directory-list)) -3))
-;; 	(setq el-files-list
-;; 	      (cons (car (car current-directory-list)) el-files-list)))
-;; ;; chequee si el nombre del fichero es un directorio
-;;        ((eq t (car (cdr (car current-directory-list))))
-;; ;; decide si salir o hacer recursión
-;; 	(if
-;; 	    (equal "."
-;; 		   (substring (car (car current-directory-list)) -1))
-;; 	    ;; entonces no hagas nada puesto que el nombre del fichero es
-;; 	    ;; el actual directorio o padre, "." o ".."
-;; 	    ()
-;; 	  ;; else desciende dentro del directorio y repite el proceso
-;; 	  (setq el-files-list
-;; 		(append
-;; 		 (files-in-below-directory
-;; 		  (car (car current-directory-list)))
-;; 		 el-files-list)))))
-;;       ;; mueve al siguiente fichero en la lista; esto también
-;;       ;; ordena la lista así mientras el bucle
-;;       ;; eventualmente llega a un fin
-;;       (setq current-directory-list (cdr current-directory-list)))
-;;     ;; devuelve los ficheros
-;;     el-files-list))
+(defun column-of-graph (max-graph-height actual-height)
+  "Return list of strings that is one column of a graph."
+  (let ((insert-list nil)
+	(number-of-top-blanks
+	 (- max-graph-height actual-height)))
+  ;; Fill in asterisks.
+    (while (> actual-height 0)
+      (setq insert-list (cons "*" insert-list))
+      (setq actual-height (1- actual-height)))
+;; Fill in blanks.
+    (while (> number-of-top-blanks 0)
+      (setq insert-list (cons " " insert-list))
+      (setq number-of-top-blanks
+	    (1- number-of-top-blanks)))
+;; Return whole list.
+    insert-list))
+
+;;(column-of-graph 3 2)
+
+
