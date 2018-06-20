@@ -162,7 +162,13 @@
   > "# -*- coding: utf-8 -*-" \n  
 )
 
-(define-skeleton davidam-skeleton-python-copyright
+(define-skeleton davidam-skeleton-shell-bin
+  "Insert a skeleton statement."
+  ""
+  > "#!/bin/bash" \n
+)
+
+(define-skeleton davidam-skeleton-shell-copyright
   "Insert a skeleton statement."
   ""
   > "# Copyright (C) " (format-time-string "%Y") "  David Arroyo Menéndez" \n
