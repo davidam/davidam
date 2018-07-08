@@ -15,7 +15,7 @@
 
 ;; You should have received a copy of the GNU General Public License
 ;; along with GNU Emacs; see the file COPYING.  If not, write to
-;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
+;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 ;; Boston, MA 02110-1301 USA,
 
 (tool-bar-mode 0)
@@ -43,6 +43,13 @@
 	                    '("\\(?:Brewfile\\|Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
 
 ;; PYTHON
+(add-hook 'python-mode-hook
+	    (lambda ()
+		    (setq-default indent-tabs-mode t)
+		    (setq-default tab-width 4)
+		    (setq-default py-indent-tabs-mode t)
+	    (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
+
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((python . t)))
@@ -51,7 +58,7 @@
 ;; (setq drupal-el-path "~/bzr/drupal-el/")
 ;; (load (concat drupal-el-path "drupal.el"))
 
-;; ORG-MODE	
+;; ORG-MODE
 (load "~/git/org-mode/contrib/lisp/org-license.el")
 (load "~/git/org-mode/contrib/lisp/org-effectiveness.el")
 (setq org-agenda-files '("~/TODO.org.gpg" "~/git/davidam.github.io/emacs/public.org"))
@@ -63,6 +70,7 @@
 (insert "@'{@dotless{i}}"))
 ;; El atajo C-i insertará i acentuada, a la manera nativa de texinfo
 (define-key po-subedit-mode-map "\C-i" 'iacute)
+
 
 ;; Debe cortar las líneas automáticamente
 (add-hook 'po-subedit-mode-hook 'auto-fill-mode)
