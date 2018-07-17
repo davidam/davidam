@@ -20,6 +20,7 @@
 
 (tool-bar-mode 0)
 (menu-bar-mode 0)
+(column-number-mode 1)
 (show-paren-mode)
 (display-battery-mode)
 
