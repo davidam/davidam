@@ -18,6 +18,8 @@
 ;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
 ;; Boston, MA 02110-1301 USA,
 
+;;; ORG FUNCTIONS
+
 (defun davidam-org-agenda-timeline-all (&optional arg)
   (interactive "P")
   (with-temp-buffer
@@ -73,6 +75,28 @@
       (goto-char (mark))
       (insert "#+END_SRC"))))
 
+
+(defun davidam-org-src(msg)
+  "Insert org source tags"
+  (interactive "sChoose your programming language: " msg)
+;; TODO: Meter name en interactive. Ej: #+name: myconcat
+  (if (equal nil msg) 
+      (setq msg "lisp"))
+  (insert "#+BEGIN_SRC " msg)
+  (insert "\n#+END_SRC\n"))
+
+(defun davidam-org-display-date ()
+  (interactive)
+  (setq item-time (org-get-scheduled-time (point)))
+  (message "%s" item-time))
+
+(defun davidam-org-todo-subtree (&optional ARG)
+  "Change the state, such as org-todo, but for all the subtree"
+  (interactive "P")
+  (org-with-limited-levels (org-todo "DONE")))
+
+;; XML
+
 (defun davidam-xml-envolve(tag)
   "Envolve source between xml tags"
   (interactive "sChoose your tag: " tag)
@@ -90,21 +114,7 @@
 	(goto-char (mark))
 	(insert (concat "</" tag ">"))))))
 
-
-(defun davidam-org-src(msg)
-  "Insert org source tags"
-  (interactive "sChoose your programming language: " msg)
-;; TODO: Meter name en interactive. Ej: #+name: myconcat
-  (if (equal nil msg) 
-      (setq msg "lisp"))
-  (insert "#+BEGIN_SRC " msg)
-  (insert "\n#+END_SRC\n"))
-
-(defun davidam-org-display-date ()
-  (interactive)
-  (setq item-time (org-get-scheduled-time (point)))
-  (message "%s" item-time))
-
+;;; FUNNY FUNCTIONS
 
 (defun davidam-happy-birthday(person)
   (interactive "MWrite the person name: ")
@@ -119,11 +129,6 @@
   (if (or (= n 0) (= n 1))
       1
     (+ (fibonacci-aux (- n 1)) (fibonacci-aux (- n 2)))))
-
-(defun davidam-org-todo-subtree (&optional ARG)
-  "Change the state, such as org-todo, but for all the subtree"
-  (interactive "P")
-  (org-with-limited-levels (org-todo "DONE")))
 
 (defun davidam-torres-de-hanoi (discos)
   (interactive "nDime tus discos y te digo cuantos pasos tienes que dar: " discos)
@@ -161,4 +166,10 @@
     (dotimes (number number-of-rows total)
       (setq total (+ total (1+ number))))
     (message "Number of pebbles: %d" total)))
+
+(defun davidam-today-is ()
+  "Display current time."
+  (interactive)
+  (message (format-time-string "Today is %Y-%m-%d %T")))
+
 
