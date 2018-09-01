@@ -18,6 +18,14 @@
 ;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
 ;; Boston, MA 02110-1301 USA,
 
+
+;;; DATA STRUCTURES
+
+;;(setq v [1 2 3 4]) 
+(defun davidam-vector-to-list (v)
+  (mapcar 'identity v)) 
+;;(davidam-vector-to-list v)
+  
 ;;; ORG FUNCTIONS
 
 (defun davidam-org-agenda-timeline-all (&optional arg)
