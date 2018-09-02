@@ -168,3 +168,24 @@ símbolos en una definición."
 
 ;;(group-number "149597870691" 4 " ")
 
+;;; CHAPTER 4: BUFFER FUNCTIONS
+
+(defun simplified-begining-of-buffer ()
+  "Mover el punto al principio del búffer; dejar marca en la posición previa"
+  (interactive)
+  (push-mark)
+  (goto-char (point-min)))
+
+(defun mark-whole-buffer ()
+  "Pon el punto al principio y marca el fin del búffer.
+Probablemente no deberías usar esta función en 
+programas Lisp; normalmente un error para una función Lisp usa
+cualquier subrrutina que usa o asigna la marca."
+  (interactive)
+  (push-mark (point))
+  (push-mark (point-max) nil t)
+  (goto-char (point-min)))
+
+
+
+
