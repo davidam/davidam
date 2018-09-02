@@ -176,6 +176,12 @@ símbolos en una definición."
   (push-mark)
   (goto-char (point-min)))
 
+(defun simplified-end-of-buffer ()
+  "Mover el punto al final del búffer; dejar marca en la posición previa"
+  (interactive)
+  (push-mark)
+  (goto-char (point-max)))
+
 (defun mark-whole-buffer ()
   "Pon el punto al principio y marca el fin del búffer.
 Probablemente no deberías usar esta función en 
