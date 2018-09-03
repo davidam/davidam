@@ -26,24 +26,24 @@
 
 (defun davidam-fibonacci (n)
   (interactive "nEscribe un numero: " n)
-  (message (number-to-string (fibonacci-aux n))))
+  (message (number-to-string (davidam-fibonacci-aux n))))
 
-(defun fibonacci-aux (n)
+(defun davidam-fibonacci-aux (n)
 ;;  (interactive "dEscribe un numero: " n)
   (if (or (= n 0) (= n 1))
       1
-    (+ (fibonacci-aux (- n 1)) (fibonacci-aux (- n 2)))))
+    (+ (davidam-fibonacci-aux (- n 1)) (davidam-fibonacci-aux (- n 2)))))
 
 ;;(davidam-fibonacci 4)
 
 (defun davidam-torres-de-hanoi (discos)
   (interactive "nDime tus discos y te digo cuantos pasos tienes que dar: " discos)
-  (message (number-to-string (torres-de-hanoi-aux discos))))
+  (message (number-to-string (davidam-torres-de-hanoi-aux discos))))
 
-(defun torres-de-hanoi-aux (discos)
+(defun davidam-torres-de-hanoi-aux (discos)
   (if (= discos 1)
       1
-    (+ 1 (* 2 (torres-de-hanoi-aux (- discos 1))))))
+    (+ 1 (* 2 (davidam-torres-de-hanoi-aux (- discos 1))))))
 
 ;;(davidam-torres-de-hanoi 5)
 
@@ -91,7 +91,7 @@
          0))
 
 
-(defun count-words-in-defun ()
+(defun davidam-count-words-in-defun ()
   "Devuelve el número de palabras y símbolos en una defun"
   (beginning-of-defun)
   (let ((count 0)
@@ -104,12 +104,12 @@
       (setq count (1+ count)))
     count))
 
-(defun count-words-defun ()
+(defun davidam-count-words-defun ()
   "Devuelve el número de palabras y símbolos en una defun"
   (interactive)
   (message
    "Contando palabras y símbolos en la definición de función ... ")
-  (let ((count (count-words-in-defun)))
+  (let ((count (davidam-count-words-in-defun)))
     (cond
      ((zerop count)
       (message "La definición NO tiene palabras o símbolos."))
@@ -118,7 +118,7 @@
      (t
       (message "La definición tiene %d palabras o símbolos." count)))))
 
-(defun find-file (filename)
+(defun davidam-find-file (filename)
   "Edita el fichero FILENAME. Cambia a un búffer visitando el fichero FILENAME, creando uno si no existe ya."
   (interactive "FFinding file: ")
   (switch-to-buffer (find-file-noselect filename)))
