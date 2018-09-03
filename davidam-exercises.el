@@ -28,11 +28,13 @@
   (interactive "nEscribe un numero: " n)
   (message (number-to-string (fibonacci-aux n))))
 
- (defun fibonacci-aux (n)
+(defun fibonacci-aux (n)
 ;;  (interactive "dEscribe un numero: " n)
   (if (or (= n 0) (= n 1))
       1
     (+ (fibonacci-aux (- n 1)) (fibonacci-aux (- n 2)))))
+
+;;(davidam-fibonacci 4)
 
 (defun davidam-torres-de-hanoi (discos)
   (interactive "nDime tus discos y te digo cuantos pasos tienes que dar: " discos)
@@ -42,6 +44,8 @@
   (if (= discos 1)
       1
     (+ 1 (* 2 (torres-de-hanoi-aux (- discos 1))))))
+
+;;(davidam-torres-de-hanoi 5)
 
 (defun davidam-multiply-two (number1 number2)
   (interactive "nNumber 1: \nnNumber 2: " number1 number2)
@@ -54,8 +58,9 @@
     (dotimes (number number-of-rows total)
       (setq total (+ total (1+ number))))
     (message "Number of pebbles: %d" total)))
+;;(davidam-triangle-using-dotimes 5)
 
-(defun count-words-example (beginning end)
+(defun davidam-count-words-example (beginning end)
   "Imprime el número de palabras en la región."
   (interactive "r")
 ;;; 1. Configura condiciones apropiadas.
@@ -63,7 +68,7 @@
   (save-excursion
     (goto-char beginning)
 ;;; 2. Contar las palabras.
-    (let ((count (recursive-count-words end)))
+    (let ((count (davidam-recursive-count-words end)))
 ;;; 3. Enviar un mensaje al usuario.
       (cond ((zerop count)
 	     (message
@@ -74,6 +79,17 @@
 	    (t
 	     (message
 	      "La región tiene %d palabras." count))))))
+
+(defun davidam-recursive-count-words (region-end)
+       "Number of words between point and REGION-END."  
+     ;;; 1. do-again-test
+       (if (and (< (point) region-end)
+                (re-search-forward "\\w+\\W*" region-end t))
+     ;;; 2. then-part: the recursive call
+           (1+ (davidam-recursive-count-words region-end))
+     ;;; 3. else-part
+         0))
+
 
 (defun count-words-in-defun ()
   "Devuelve el número de palabras y símbolos en una defun"
@@ -107,7 +123,7 @@
   (interactive "FFinding file: ")
   (switch-to-buffer (find-file-noselect filename)))
 
-(defun lengths-list-file (filename)
+(defun davidam-lengths-list-file (filename)
   "Devuelve la lista de tamaños de definiciones con FILE.
 La lista devuelta es una lista de números.
 Cada número es el número de palabras o
@@ -127,7 +143,7 @@ símbolos en una definición."
 ;;      (kill-buffer buffer)
       (message "Tamaño en palabras de las funciones: %s " lengths-list))))
 
-(defun column-of-graph (max-graph-height actual-height)
+(defun davidam-column-of-graph (max-graph-height actual-height)
   "Return list of strings that is one column of a graph."
   (let ((insert-list nil)
 	(number-of-top-blanks
@@ -144,9 +160,9 @@ símbolos en una definición."
 ;; Return whole list.
     insert-list))
 
-;;(column-of-graph 3 2)
+;;(davidam-column-of-graph 3 2)
 
-(defun group-number (num &optional size char)
+(defun davidam-group-number (num &optional size char)
     "Format NUM as string grouped to SIZE with CHAR."
     ;; Based on code for `math-group-float' in calc-ext.el
     (let* ((size (or size 3))
@@ -164,25 +180,25 @@ símbolos en una definición."
               pt (- pt size)))
       str))
 
-;;(group-number 299792458)
+;;(davidam-group-number 299792458)
 
 ;;(group-number "149597870691" 4 " ")
 
 ;;; CHAPTER 4: BUFFER FUNCTIONS
 
-(defun simplified-begining-of-buffer ()
+ (defun davidam-simplified-begining-of-buffer ()
   "Mover el punto al principio del búffer; dejar marca en la posición previa"
   (interactive)
   (push-mark)
   (goto-char (point-min)))
 
-(defun simplified-end-of-buffer ()
+(defun davidam-simplified-end-of-buffer ()
   "Mover el punto al final del búffer; dejar marca en la posición previa"
   (interactive)
   (push-mark)
   (goto-char (point-max)))
 
-(defun mark-whole-buffer ()
+(defun davidam-mark-whole-buffer ()
   "Pon el punto al principio y marca el fin del búffer.
 Probablemente no deberías usar esta función en 
 programas Lisp; normalmente un error para una función Lisp usa
@@ -193,5 +209,6 @@ cualquier subrrutina que usa o asigna la marca."
   (goto-char (point-min)))
 
 
+	    
 
 
