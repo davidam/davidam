@@ -15,14 +15,14 @@
 
 ;; You should have received a copy of the GNU General Public License
 ;; along with GNU Emacs; see the file COPYING.  If not, write to
-;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
+;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 ;; Boston, MA 02110-1301 USA,
 
 (define-skeleton davidam-org-bibliography
   "A skeleton to bibliography for org-mode"
   ""
   '(setq author (skeleton-read "Author (Surname, Initials): ")) \n
-  '(setq year (skeleton-read "Year: ")) \n 
+  '(setq year (skeleton-read "Year: ")) \n
   '(setq title (skeleton-read "Title: ")) \n
   '(setq publisher (skeleton-read "Publisher: ")) \n
   '(setq pages (skeleton-read "Pages Number: ")) \n
@@ -33,8 +33,8 @@
   "A skeleton to bibliography for org-mode"
   ""
   '(setq author (skeleton-read "Author (Surname, Initials): ")) \n
-  '(setq year (skeleton-read "Year: ")) \n 
-  '(setq date-seen (skeleton-read "Date seen: ")) \n 
+  '(setq year (skeleton-read "Year: ")) \n
+  '(setq date-seen (skeleton-read "Date seen: ")) \n
   '(setq title (skeleton-read "Title: ")) \n
   '(setq publisher (skeleton-read "Publisher: ")) \n
   '(setq url (skeleton-read "Url: ")) \n
@@ -128,7 +128,6 @@
   )
   > "end" \n
   )
-  
 
 
 (define-skeleton davidam-skeleton-add-copyright
@@ -153,14 +152,22 @@
   > ";; along with GNU Emacs; see the file COPYING.  If not, write to" \n
   > ";; the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, " \n
   > ";; Boston, MA 02110-1301 USA," \n
-) 
+)
 
 (define-skeleton davidam-skeleton-python-bin-and-utf8
   "Insert a skeleton statement."
   ""
   > "#!/usr/bin/python" \n
-  > "# -*- coding: utf-8 -*-" \n  
+  > "# -*- coding: utf-8 -*-" \n
 )
+
+(define-skeleton davidam-skeleton-python-class
+  "Insert a skeleton statement."
+  ""
+  '(setq class (skeleton-read "Class Name? "))
+  > "class " class "(object):\n"
+)
+
 
 (define-skeleton davidam-skeleton-shell-bin
   "Insert a skeleton statement."
@@ -192,5 +199,26 @@
   > "# Boston, MA 02110-1301 USA," \n
 )
 
-
-
+(define-skeleton davidam-skeleton-c-copyright
+  "Insert a skeleton statement."
+  ""
+  > "/* Copyright (C) " (format-time-string "%Y") "  David Arroyo Menéndez" \n
+  > ""
+  > " Author: David Arroyo Menéndez <" user-mail-address ">" \n
+  > " Maintainer: David Arroyo Menéndez <" user-mail-address ">" \n
+  > ""
+  > " This file is free software; you can redistribute it and/or modify"
+  > " it under the terms of the GNU General Public License as published by"
+  > " the Free Software Foundation; either version 3, or (at your option)"
+  > " any later version."
+  > ""
+  > " This file is distributed in the hope that it will be useful,"
+  > " but WITHOUT ANY WARRANTY; without even the implied warranty of"
+  > " MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the"
+  > " GNU General Public License for more details."
+  > ""
+  > " You should have received a copy of the GNU General Public License"
+  > " along with GNU Emacs; see the file COPYING.  If not, write to"
+  > " the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, "
+  > " Boston, MA 02110-1301 USA, */"
+)
