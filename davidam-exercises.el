@@ -20,9 +20,23 @@
 
 ;; Useful exercises if you are reading An Introduction to Emacs Lisp.
 
+;; HELLO WORLD EXERCISES IN ELISP
+
 (defun davidam-happy-birthday(person)
   (interactive "MWrite the person name: ")
   (message (concat "Happy birthday to you. Happy birthday to you. Happy birthday, dear " person ". Happy birthday to you")))
+
+;; LISTS
+
+(defun davidam-ordena1 (a b c)
+   (cond ((and (< a b) (< b c)) (list a b c))
+	 ((and (< a c) (< c b)) (list a c b))
+	 ((and (< b a) (< a c)) (list b a c))
+	 ((and (< b c) (< c a)) (list b c a))
+	 ((and (< c a) (< a b)) (list c a b))
+	 ((and (< c b) (< b a)) (list a b c))))
+
+;; (davidam-ordena1 5 1 6)
 
 (defun davidam-fibonacci (n)
   (interactive "nEscribe un numero: " n)
