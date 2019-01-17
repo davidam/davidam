@@ -23,6 +23,7 @@
 (column-number-mode 1)
 (show-paren-mode)
 (display-battery-mode)
+(set-face-attribute 'default nil :height 120) ;; font-size
 
 ;; PERSONAL DATA
 (setq user-full-name "David Arroyo Menendez")
@@ -53,7 +54,9 @@
 
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((python . t)))
+ '((python . t)
+   (sh . t)
+   (sql . t)))
 
 ;; DRUPAL
 ;; (setq drupal-el-path "~/bzr/drupal-el/")
