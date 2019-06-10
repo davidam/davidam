@@ -129,6 +129,18 @@
   > "end" \n
   )
 
+(define-skeleton davidam-skeleton-damegender-test
+  "Insert a test statement."
+  ""
+  '(setq name (skeleton-read "Test name? "))
+  > "if ! cmp files/tests/" name ".txt files/tests/" name "-$(date \"+%y-%m-%d-%H\").txt >/dev/null 2>&1 \n"
+  > "then \n"
+  > "    echo \"" name " test is failing\"" \n
+  > "else" \n
+  > "    echo \"" name " test is ok\"" \n
+  > "fi" \n
+  )
+
 
 (define-skeleton davidam-skeleton-add-copyright
   "Add copyright note"
