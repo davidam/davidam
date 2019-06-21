@@ -145,6 +145,7 @@
 (define-skeleton davidam-skeleton-add-copyright
   "Add copyright note"
   ""
+  '(setq program (skeleton-read "Software name? "))
   > ";; Copyright (C) " (format-time-string "%Y") "  David Arroyo Menéndez" \n
   > "" \n
   > ";; Author: David Arroyo Menéndez <" user-mail-address ">" \n
@@ -161,7 +162,7 @@
   > ";; GNU General Public License for more details." \n
   > "" \n
   > ";; You should have received a copy of the GNU General Public License" \n
-  > ";; along with GNU Emacs; see the file COPYING.  If not, write to" \n
+  > ";; along with " program "; see the file COPYING.  If not, write to" \n
   > ";; the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, " \n
   > ";; Boston, MA 02110-1301 USA," \n
 )
@@ -190,6 +191,7 @@
 (define-skeleton davidam-skeleton-shell-copyright
   "Insert a skeleton statement."
   ""
+  '(setq program (skeleton-read "Software name? "))  
   > "# Copyright (C) " (format-time-string "%Y") "  David Arroyo Menéndez" \n
   > "" \n
   > "# Author: David Arroyo Menéndez <" user-mail-address ">" \n
@@ -206,7 +208,7 @@
   > "# GNU General Public License for more details." \n
   > "" \n
   > "# You should have received a copy of the GNU General Public License" \n
-  > "# along with GNU Emacs; see the file COPYING.  If not, write to" \n
+  > "# along with " program "; see the file COPYING.  If not, write to" \n
   > "# the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, " \n
   > "# Boston, MA 02110-1301 USA," \n
 )
@@ -214,6 +216,7 @@
 (define-skeleton davidam-skeleton-c-copyright
   "Insert a skeleton statement."
   ""
+  '(setq program (skeleton-read "Software name? "))    
   > "/* Copyright (C) " (format-time-string "%Y") "  David Arroyo Menéndez" \n
   > ""
   > " Author: David Arroyo Menéndez <" user-mail-address ">" \n
@@ -230,7 +233,7 @@
   > " GNU General Public License for more details."
   > ""
   > " You should have received a copy of the GNU General Public License"
-  > " along with GNU Emacs; see the file COPYING.  If not, write to"
+  > " along with " program "; see the file COPYING.  If not, write to"
   > " the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, "
   > " Boston, MA 02110-1301 USA, */"
 )
