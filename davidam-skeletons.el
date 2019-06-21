@@ -162,7 +162,7 @@
   > ";; GNU General Public License for more details." \n
   > "" \n
   > ";; You should have received a copy of the GNU General Public License" \n
-  > ";; along with " program "; see the file COPYING.  If not, write to" \n
+  > ";; along with " program "; see the file LICENSE.  If not, write to" \n
   > ";; the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, " \n
   > ";; Boston, MA 02110-1301 USA," \n
 )
@@ -208,7 +208,7 @@
   > "# GNU General Public License for more details." \n
   > "" \n
   > "# You should have received a copy of the GNU General Public License" \n
-  > "# along with " program "; see the file COPYING.  If not, write to" \n
+  > "# along with " program "; see the file LICENSE.  If not, write to" \n
   > "# the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, " \n
   > "# Boston, MA 02110-1301 USA," \n
 )
