@@ -133,7 +133,7 @@
   "Insert a test statement."
   ""
   '(setq name (skeleton-read "Test name? "))
-  > "if ! cmp files/tests/" name ".txt files/tests/" name "-$(date \"+%y-%m-%d-%H\").txt >/dev/null 2>&1 \n"
+  > "if ! cmp files/tests/" name ".txt files/tests/" name "-$(date \"+%Y-%m-%d-%H\").txt >/dev/null 2>&1 \n"
   > "then \n"
   > "    echo \"" name " test is failing\"" \n
   > "else" \n
@@ -191,7 +191,7 @@
 (define-skeleton davidam-skeleton-shell-copyright
   "Insert a skeleton statement."
   ""
-  '(setq program (skeleton-read "Software name? "))  
+  '(setq program (skeleton-read "Software name? "))
   > "# Copyright (C) " (format-time-string "%Y") "  David Arroyo Menéndez" \n
   > "" \n
   > "# Author: David Arroyo Menéndez <" user-mail-address ">" \n
@@ -216,7 +216,7 @@
 (define-skeleton davidam-skeleton-c-copyright
   "Insert a skeleton statement."
   ""
-  '(setq program (skeleton-read "Software name? "))    
+  '(setq program (skeleton-read "Software name? "))
   > "/* Copyright (C) " (format-time-string "%Y") "  David Arroyo Menéndez" \n
   > ""
   > " Author: David Arroyo Menéndez <" user-mail-address ">" \n
