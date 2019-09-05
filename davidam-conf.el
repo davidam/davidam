@@ -23,7 +23,7 @@
 (column-number-mode 1)
 (show-paren-mode)
 (display-battery-mode)
-(set-face-attribute 'default nil :height 190) ;; font-size
+(set-face-attribute 'default nil :height 160) ;; font-size
 
 ;; PERSONAL DATA
 (setq user-full-name "David Arroyo Menendez")
