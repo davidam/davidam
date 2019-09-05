@@ -171,15 +171,37 @@
   "Add org header"
   ""
   '(setq title (skeleton-read "Title: "))
-  '(setq author (skeleton-read "Author: "))  
+  '(setq author (skeleton-read "Author: "))
   '(setq lang (skeleton-read "Language: "))
   > "#+TITLE: " title "" \n
   > "#+AUTHOR: " author "" \n
+  > "#+EMAIL: " user-mail-address "" \n
+  > "#+DATE: [" (format-time-string "%Y-%m-%d") "]" \n
   > "#+LANGUAGE: " lang "" \n
   > "#+HTML_HEAD: <link rel='stylesheet' type='text/css' href='../css/org.css' />" \n
   )
 
-	 
+(define-skeleton davidam-skeleton-org-beamer-header
+  "Add org beamer header"
+  ""
+  '(setq title (skeleton-read "Title: "))
+  '(setq author (skeleton-read "Author: "))
+  '(setq lang (skeleton-read "Language: "))
+  '(setq description (skeleton-read "Description: "))
+  '(setq keywords (skeleton-read "Keywords : "))
+  > "#+TITLE: " title "" \n
+  > "#+AUTHOR: " author "" \n
+  > "#+EMAIL: " user-mail-address "" \n
+  > "#+DATE: [" (format-time-string "%Y-%m-%d") "]" \n
+  > "#+LANGUAGE: " lang "" \n
+  > "#+KEYWORDS: " keywords "" \n
+  > "#+LaTeX_CLASS: beamer" \n
+  > "#+LaTeX_CLASS_OPTIONS: [presentation]" \n
+  > "#+BEAMER_THEME: Madrid" \n
+  > "#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col) %8BEAMER_OPT(Opt)" \n
+  )
+
+
 
 (define-skeleton davidam-skeleton-python-bin-and-utf8
   "Insert a skeleton statement."
