@@ -167,6 +167,17 @@
   > ";; Boston, MA 02110-1301 USA," \n
 )
 
+(define-skeleton davidam-skeleton-org-header
+  "Add org header"
+  '(setq title (skeleton-read "Title? "))
+  '(setq author (skeleton-read "Author? "))  
+  '(setq lang (skeleton-read "Language? "))
+  > "#+TITLE: " title \n
+  > "#+AUTHOR: " author \n
+  > "#+LANGUAGE: " lang \n
+  #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/org.css" />
+)	 
+
 (define-skeleton davidam-skeleton-python-bin-and-utf8
   "Insert a skeleton statement."
   ""
