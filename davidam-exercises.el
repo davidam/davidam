@@ -228,7 +228,7 @@ cualquier subrrutina que usa o asigna la marca."
 
 ;;;; REGEX ;;;;;;;;;;;;;;
 
- (defun davidam-number (x)
+(defun davidam-number (x)
   "A simple exercise to explain regex applying to range of numbers"
   (interactive "sNumber: " x)
   (cond
@@ -240,3 +240,10 @@ cualquier subrrutina que usa o asigna la marca."
 	(message "The number is 127 or 131"))
    ((string-match "^\\([4-9][0-9]\\|100\\)$" x)
 	(message "The number is from 40 to 100"))))
+
+(defun davidam-alfanum (s)
+  "A simple exercise to detect an alfanumeric string"
+  (interactive "sString: " s)
+  (if (string-match "\\([a-z]\\|[A-Z]\\| \\|[0-9]\\)" s)
+	  (message "The string is alfnumeric")
+	(message "The string is not alfanumeric")))
