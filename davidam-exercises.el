@@ -15,7 +15,7 @@
 
 ;; You should have received a copy of the GNU General Public License
 ;; along with GNU Emacs; see the file LICENSE.  If not, write to
-;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
+;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 ;; Boston, MA 02110-1301 USA,
 
 ;; Useful exercises if you are reading An Introduction to Emacs Lisp.
@@ -67,7 +67,7 @@
 
 (defun davidam-triangle-using-dotimes (number-of-rows)
   "Using dotimes, add up the number of pebbles in a triangle."
-  (interactive "nNumber of rows: " number-of-rows) 
+  (interactive "nNumber of rows: " number-of-rows)
   (let ((total 0))  ; otherwise a total is a void variable
     (dotimes (number number-of-rows total)
       (setq total (+ total (1+ number))))
@@ -95,7 +95,7 @@
 	      "La región tiene %d palabras." count))))))
 
 (defun davidam-recursive-count-words (region-end)
-       "Number of words between point and REGION-END."  
+       "Number of words between point and REGION-END."
      ;;; 1. do-again-test
        (if (and (< (point) region-end)
                 (re-search-forward "\\w+\\W*" region-end t))
@@ -214,7 +214,7 @@ símbolos en una definición."
 
 (defun davidam-mark-whole-buffer ()
   "Pon el punto al principio y marca el fin del búffer.
-Probablemente no deberías usar esta función en 
+Probablemente no deberías usar esta función en
 programas Lisp; normalmente un error para una función Lisp usa
 cualquier subrrutina que usa o asigna la marca."
   (interactive)
@@ -222,7 +222,21 @@ cualquier subrrutina que usa o asigna la marca."
   (push-mark (point-max) nil t)
   (goto-char (point-min)))
 
+(defun davidam-multiply-two (number1 number2)
+  (interactive "nNumber 1: \nnNumber 2: " number1 number2)
+  (message "The result is %d" (* number1 number2)))
 
-	    
+;;;; REGEX ;;;;;;;;;;;;;;
 
-
+ (defun davidam-number (x)
+  "A simple exercise to explain regex applying to range of numbers"
+  (interactive "sNumber: " x)
+  (cond
+   ((string-match "^[1-9]$" x)
+	(message "The number is going from 1 to 9"))
+   ((string-match "^1[0-9]$" x)
+	(message "The number is from 10 to 19"))
+   ((string-match "\\(127\\|131\\)" x)
+	(message "The number is 127 or 131"))
+   ((string-match "^\\([4-9][0-9]\\|100\\)$" x)
+	(message "The number is from 40 to 100"))))
