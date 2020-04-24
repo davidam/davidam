@@ -29,3 +29,5 @@ emacs -batch -Q -l davidam-exercises.el -f davidam-fibonacci
 echo "Multiply two numbers"
 emacs -batch -Q -l davidam-exercises.el -f davidam-multiply-two
 
+echo "Execute (+ 2 3)"
+emacs -Q --batch --eval '(message (number-to-string(+ 2 3)))'
