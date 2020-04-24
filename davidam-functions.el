@@ -145,4 +145,7 @@
   (interactive)
   (message (format-time-string "Today is %Y-%m-%d %T")))
 
+(defun davidam-print()
+  (interactive)
+  (print "Hello shell"))
 
