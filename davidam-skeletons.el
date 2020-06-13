@@ -272,3 +272,53 @@
   > " the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, "
   > " Boston, MA 02110-1301 USA, */"
 )
+
+(define-skeleton davidam-skeleton-wcl-c-copyright
+  "Insert a skeleton statement."
+  ""
+  '(setq program (skeleton-read "Software name? "))
+  > "/* Copyright (C) " (format-time-string "%Y") "  David Arroyo Menéndez" \n
+  > ""
+  > " Author: David Arroyo Menéndez <" user-mail-address ">" \n
+  > " Maintainer: David Arroyo Menéndez <" user-mail-address ">" \n
+  > ""
+  > " This file is software with freedom of class; you can" \n
+  > " redistribute it and/or modify it  only for the working" \n
+  > " class under the terms of the Working Class License" \n
+  > " published by David Arroyo Menéndez." \n
+  > ""
+  > " This file is distributed in the hope that it will be useful," \n
+  > " but WITHOUT ANY WARRANTY; without even the implied warranty of" \n
+  > " MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the" \n
+  > " Working Class License for more details." \n
+  > ""  
+  > " You should have received a copy of the Working Class License along" \n
+  > " with " program "; see the file COPYING. If not, see" \n
+  > " <https://github.com/davidam/workingclasslicense>." \n
+  > "*/"    
+  )
+
+(define-skeleton davidam-skeleton-wcl-copyright
+  "Add copyright note"
+  ""
+  '(setq program (skeleton-read "Software name? "))
+  > ";; Copyright (C) " (format-time-string "%Y") "  David Arroyo Menéndez" \n
+  > "" \n
+  > ";; Author: David Arroyo Menéndez <" user-mail-address ">" \n
+  > ";; Maintainer: David Arroyo Menéndez <" user-mail-address ">" \n
+  > "" \n
+  > " This file is software with freedom of class; you can" \n
+  > " redistribute it and/or modify it  only for the working" \n
+  > " class under the terms of the Working Class License" \n
+  > " published by David Arroyo Menéndez." \n
+  > "" \n
+  > " This file is distributed in the hope that it will be useful," \n
+  > " but WITHOUT ANY WARRANTY; without even the implied warranty of" \n
+  > " MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the" \n
+  > " Working Class License for more details." \n
+  > "" \n
+  > " You should have received a copy of the Working Class License along" \n
+  > " with " program "; see the file COPYING. If not, see" \n
+  > " <https://github.com/davidam/workingclasslicense>." \n
+  > "*/" \n   
+)
