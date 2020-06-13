@@ -1,22 +1,20 @@
-;; Copyright (C) 2018  David Arroyo Menéndez
+;; Copyright (C) 2020  David Arroyo Menéndez
 
 ;; Author: David Arroyo Menéndez <davidam@gnu.org>
 ;; Maintainer: David Arroyo Menéndez <davidam@gnu.org>
 
-;; This file is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation; either version 3, or (at your option)
-;; any later version.
+;; This file is software with freedom of class; you can
+;; redistribute it and/or modify it  only for the working
+;; class under the terms of the Working Class License
+;; published by David Arroyo Menéndez.
 
 ;; This file is distributed in the hope that it will be useful,
 ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs; see the file LICENSE.  If not, write to
-;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-;; Boston, MA 02110-1301 USA,
+;; Working Class License for more details.
+;; You should have received a copy of the Working Class License along
+;; with examples about Emacs Lisp; see the file COPYING. If not, see
+;; <https://github.com/davidam/workingclasslicense>.
 
 (tool-bar-mode 0)
 (menu-bar-mode 0)
@@ -44,6 +42,12 @@
 (add-to-list 'auto-mode-alist
 	                    '("\\(?:Brewfile\\|Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
 
+;;; ERC
+
+
+
+
+
 ;; PYTHON
 (add-hook 'python-mode-hook
 	    (lambda ()
@@ -65,6 +69,8 @@
 ;; ORG-MODE
 (load "~/git/org-mode/contrib/lisp/org-license.el")
 (load "~/git/org-mode/contrib/lisp/org-effectiveness.el")
+(load "~/git/davidam/davidam-skeletons.el")
+(load "~/git/davidam/davidam-functions.el")
 (setq org-agenda-files '("~/TODO.org.gpg" "~/git/davidam.github.io/emacs/public.org"))
 
 ;; ORG & YOUTUBE
