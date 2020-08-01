@@ -326,12 +326,11 @@
 (define-skeleton davidam-skeleton-js-copyright
   "Add copyright note"
   ""
-  '(setq program (skeleton-read "Software name? "))
   > "/*" \n
   > "        @licstart  The following is the entire license notice for the " \n
   > "        JavaScript code in this page. " \n
   > " " \n
-  > "        Copyright (C) " (format-time-string "%Y") "  David Arroyo Menéndez " user-mail-address \n
+  > "        Copyright (C) " (format-time-string "%Y") "  David Arroyo Menéndez <" user-mail-address ">" \n
   > " " \n
   > "        The JavaScript code in this page is free software: you can " \n
   > "        redistribute it and/or modify it under the terms of the GNU " \n
