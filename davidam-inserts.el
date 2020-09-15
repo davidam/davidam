@@ -65,12 +65,14 @@
 (defun davidam-insert-copyright-note(language license name)
   (interactive "sLanguage: \nsLicense: \nsSoftware Name: \n")
   (setq comment "")
-  (cond ((string-prefix-p language "sh")
+  (cond ((or (string-prefix-p language "sh") (string= language "bash") (string-prefix-p language "python"))
 	 (setq comment "# "))
-	((string= language "bash")
-	 (setq comment "# "))      
 	((string= language "lisp")
-	 (setq comment ";;")))
+	 (setq comment ";;"))
+	((string= language "sql")
+	 (setq comment "-- "))	
+	((or (string= language "javascript") (string= language "js") (string= language "c"))
+	 (setq comment "//")))
   (cond ((string= license "gplv3")
 	 (insert (concat comment " Copyright (C) " (format-time-string "%Y") " " user-full-name "\n"))
 	 (insert "\n")
@@ -89,7 +91,15 @@
 	 (insert (concat comment " You should have received a copy of the GNU General Public License\n"))
 	 (insert (concat comment " along with " name "; see the file LICENSE.  If not, write to\n"))
 	 (insert (concat comment " the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, \n"))
-	 (insert (concat comment " Boston, MA 02110-1301 USA,\n")))))
+	 (insert (concat comment " Boston, MA 02110-1301 USA,\n")))
+	((string= license "fl")
+	 (insert "You can share, copy and modify this software if you are a woman or you\n")
+	 (insert (concat "are " user-full-name " and you include this note.\n")))))
+
+
+
+
+
 
 
 		 
