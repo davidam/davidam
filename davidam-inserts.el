@@ -44,6 +44,14 @@
 	 (insert (concat comment "!/usr/bin/" language "\n"))
 	 (insert "# coding: utf-8 \n"))))
 
- 
+(defun davidam-insert-damegender-test(test)
+  (interactive "sWrite damegender test\n")
+  (insert (concat
+	   "if ! cmp files/tests/" test ".txt files/tests/" test "-$(date \"+%Y-%m-%d-%H\").txt >/dev/null 2>&1 \n"))
+  (insert "then \n")
+  (insert "    echo \"" test " test is failing\"\n")
+  (insert "else\n")
+  (insert "    echo \"" test " test is ok\"\n")
+  (insert "fi\n"))
 
-
+  
