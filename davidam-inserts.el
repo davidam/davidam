@@ -62,4 +62,36 @@
   (insert "    echo \"" test " test is ok\"\n")
   (insert "fi\n"))
 
-  
+(defun davidam-insert-copyright-note(language license name)
+  (interactive "sLanguage: \nsLicense: \nsSoftware Name: \n")
+  (setq comment "")
+  (cond ((string-prefix-p language "sh")
+	 (setq comment "# "))
+	((string= language "bash")
+	 (setq comment "# "))      
+	((string= language "lisp")
+	 (setq comment ";;")))
+  (cond ((string= license "gplv3")
+	 (insert (concat comment " Copyright (C) " (format-time-string "%Y") " " user-full-name "\n"))
+	 (insert "\n")
+	 (insert (concat comment " Author: " user-full-name " <" user-mail-address "> \n"))
+	 (insert (concat comment " Maintainer: " user-full-name " <" user-mail-address "> \n"))
+	 (insert (concat comment " This file is free software; you can redistribute it and/or modify\n"))
+	 (insert (concat comment " it under the terms of the GNU General Public License as published by\n"))
+	 (insert (concat comment " the Free Software Foundation; either version 3, or (at your option)\n"))
+	 (insert (concat comment " any later version.\n"))
+	 (insert (concat comment "\n"))
+	 (insert (concat comment " This file is distributed in the hope that it will be useful,\n"))
+	 (insert (concat comment " but WITHOUT ANY WARRANTY; without even the implied warranty of\n"))
+	 (insert (concat comment " MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"))
+	 (insert (concat comment " GNU General Public License for more details.\n"))
+	 (insert (concat comment "\n"))
+	 (insert (concat comment " You should have received a copy of the GNU General Public License\n"))
+	 (insert (concat comment " along with " name "; see the file LICENSE.  If not, write to\n"))
+	 (insert (concat comment " the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, \n"))
+	 (insert (concat comment " Boston, MA 02110-1301 USA,\n")))))
+
+
+		 
+	 
+	    
