@@ -93,6 +93,10 @@
 	 (insert (concat comment " the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, \n"))
 	 (insert (concat comment " Boston, MA 02110-1301 USA,\n")))
 	((string= license "fl")
+	 (insert (concat comment " Copyright (C) " (format-time-string "%Y") " " user-full-name "\n"))
+	 (insert "\n")
+	 (insert (concat comment " Author: " user-full-name " <" user-mail-address "> \n"))
+	 (insert (concat comment " Maintainer: " user-full-name " <" user-mail-address "> \n"))
 	 (insert "You can share, copy and modify this software if you are a woman or you\n")
 	 (insert (concat "are " user-full-name " and you include this note.\n")))))
 
