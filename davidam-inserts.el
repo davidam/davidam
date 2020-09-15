@@ -30,3 +30,20 @@
   (insert "#+BEAMER_THEME: Madrid \n")
   (insert "#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col) %8BEAMER_OPT(Opt) \n"))
 
+(defun davidam-insert-bin(language)
+  (interactive "sWrite a language (python2, python3, shell, bash, ruby): \n")
+  (setq comment "#")
+  (cond ((string-prefix-p "python" language)
+	 (insert (concat comment "!/usr/bin/" language "\n"))
+	 (insert (concat comment " -*- coding: utf-8 -*-\n")))
+	((string= language "shell")
+	 (insert "!/usr/bin/sh\n"))
+	((string= language "bash")
+	 (insert "!/usr/bin/sh\n"))
+	((string= language "ruby")
+	 (insert (concat comment "!/usr/bin/" language "\n"))
+	 (insert "# coding: utf-8 \n"))))
+
+ 
+
+
