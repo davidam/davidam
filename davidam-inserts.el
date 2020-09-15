@@ -30,6 +30,14 @@
   (insert "#+BEAMER_THEME: Madrid \n")
   (insert "#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col) %8BEAMER_OPT(Opt) \n"))
 
+(defun davidam-insert-org-header(title author language)
+  (interactive "sTitle: \nsAuthor: \nsLanguage: \n")
+  (insert (concat "#+TITLE: " title "\n"))
+  (insert (concat "#+AUTHOR: " author "\n"))
+  (insert (concat "#+EMAIL: " user-mail-address "\n"))
+  (insert (concat "#+LANGUAGE: " language "\n"))
+  (insert "#+HTML_HEAD: <link rel='stylesheet' type='text/css' href='../css/org.css' />\n"))
+  
 (defun davidam-insert-bin(language)
   (interactive "sWrite a language (python2, python3, shell, bash, ruby): \n")
   (setq comment "#")
