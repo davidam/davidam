@@ -101,6 +101,17 @@
   (interactive "P")
   (org-with-limited-levels (org-todo "DONE")))
 
+(defun davidam-org-table-rotating-table (beg end)  
+  "Small hack to rotate a table."
+  (interactive "r")
+  (save-excursion
+        (goto-char beg)
+        (reverse-region beg end)
+        (org-table-transpose-table-at-point)))
+
+
+
+
 ;; XML
 
 (defun davidam-xml-envolve(tag)
