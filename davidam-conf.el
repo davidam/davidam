@@ -24,15 +24,15 @@
 (set-face-attribute 'default nil :height 160) ;; font-size
 
 ;; PERSONAL DATA
-(setq user-full-name "David Arroyo Menendez")
-(setq user-mail-address "davidam@gnu.org")
+(setq user-full-name "David Arroyo Menéndez")
+(setq user-mail-address "davidam@gmail.com")
 (put 'upcase-region 'disabled nil)
 
 ;; TO COLLAPSE FUNCTIONS
 (outline-minor-mode) ;; You can use it with: M-x hide-sublevels, M-x hide-others, M-x show-subtree, M-x hide-subtree, M-x show-all
 
 ;; AUTOCOMPLETE
-(load "/home/davidam/git/popup-el/popup.el")
+;;(load "/home/davidam/git/popup-el/popup.el")
 ;;(load "/home/davidam/git/auto-complete/auto-complete.el")
 
 ;; RUBY
@@ -56,11 +56,11 @@
 		    (setq-default py-indent-tabs-mode t)
 	    (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
 
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((python . t)
-   (sh . t)
-   (sql . t)))
+;; (org-babel-do-load-languages
+;;  'org-babel-load-languages
+;;  '((python . t)
+;;    (sh . t)
+;;    (sql . t)))
 
 ;; DRUPAL
 ;; (setq drupal-el-path "~/bzr/drupal-el/")
