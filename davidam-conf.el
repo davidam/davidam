@@ -70,6 +70,7 @@
 (load "~/git/org-mode/contrib/lisp/org-license.el")
 (load "~/git/org-mode/contrib/lisp/org-effectiveness.el")
 (load "~/git/davidam/davidam-skeletons.el")
+(load "~/git/davidam/davidam-inserts.el")
 (load "~/git/davidam/davidam-functions.el")
 (setq org-agenda-files '("~/TODO.org.gpg" "~/git/davidam.github.io/emacs/public.org"))
 
@@ -99,10 +100,17 @@
 ;;;; PO-MODE ;;;;
 (require 'po-mode)
 (defun iacute()
-(interactive)
-(insert "@'{@dotless{i}}"))
+  (interactive)
+  (insert "@'{@dotless{i}}"))
 ;; El atajo C-i insertará i acentuada, a la manera nativa de texinfo
 (define-key po-subedit-mode-map "\C-i" 'iacute)
+
+(defun egne()
+  (interactive)
+  (insert "@~n"))
+;; El atajo C-n insertará eñe, a la manera nativa de texinfo
+(define-key po-subedit-mode-map "\C-n" 'egne)
+
 
 
 ;; Debe cortar las líneas automáticamente
