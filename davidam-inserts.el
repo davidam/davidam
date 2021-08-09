@@ -21,7 +21,7 @@
   (interactive "sTitle: \nsAuthor: \nsLanguage: \nsDescription: \nsKeywords: ")
   (insert (concat "#+TITLE: " title "\n"))
   (insert (concat "#+AUTHOR: " author "\n"))
-  (insert (concat "#+EMAIL: " user-mail-address "\n"))  
+  (insert (concat "#+EMAIL: " user-mail-address "\n"))
   (insert (concat "#+DATE: [" (format-time-string "%Y-%m-%d") "] \n"))
   (insert (concat "#+LANGUAGE: " language "\n"))
   (insert (concat "#+KEYWORDS: " keywords "\n"))
@@ -37,7 +37,7 @@
   (insert (concat "#+EMAIL: " user-mail-address "\n"))
   (insert (concat "#+LANGUAGE: " language "\n"))
   (insert "#+HTML_HEAD: <link rel='stylesheet' type='text/css' href='../css/org.css' />\n"))
-  
+
 (defun davidam-insert-bin(language)
   (interactive "sWrite a language (python2, python3, shell, bash, ruby): \n")
   (setq comment "#")
@@ -62,6 +62,12 @@
   (insert "    echo \"" test " test is ok\"\n")
   (insert "fi\n"))
 
+(defun davidam-insert-jest-test(test expectvar1 expectvar2)
+  (interactive "sWrite jest title test \nsExpect variable 1: \nsExpect variable 2: \n")
+  (insert "test('" test "', () => {\n")
+  (insert "  expect(" expectvar1 ").toEqual('" expectvar2 "');\n")
+  (insert "});"))  
+
 (defun davidam-insert-copyright-note(language license name)
   (interactive "sLanguage (python, bash, lisp, sql, js): \nsLicense (gplv3, fl, wcl): \nsSoftware Name: \n")
   (setq comment "")
@@ -70,7 +76,7 @@
 	((string= language "lisp")
 	 (setq comment ";;"))
 	((string= language "sql")
-	 (setq comment "-- "))	
+	 (setq comment "-- "))
 	((or (string= language "javascript") (string= language "js") (string= language "c"))
 	 (setq comment "//")))
   (cond ((string= license "gplv3")
@@ -89,7 +95,7 @@
 	 (insert (concat comment " GNU General Public License for more details.\n"))
 	 (insert (concat comment "\n"))
 	 (insert (concat comment " You should have received a copy of the GNU General Public License\n"))
-	 (insert (concat comment " along with " name "; see the file LICENSE.  If not, write to\n"))
+	 (insert (concat comment " along with " name "; see the file GPL.txt.  If not, write to\n"))
 	 (insert (concat comment " the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, \n"))
 	 (insert (concat comment " Boston, MA 02110-1301 USA,\n")))
 	((string= license "fl")
@@ -115,13 +121,3 @@
 	 (insert (concat comment " You should have received a copy of the Working Class License along\n"))
 	 (insert (concat comment " with examples about Bash; see the file COPYING. If not, see\n"))
 	 (insert (concat comment " <https://github.com/davidam/workingclasslicense>.\n")))))
-
-
-
-
-
-
-
-		 
-	 
-	    
