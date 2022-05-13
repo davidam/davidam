@@ -45,7 +45,7 @@
 	 (insert (concat comment "!/usr/bin/" language "\n"))
 	 (insert (concat comment " -*- coding: utf-8 -*-\n")))
 	((string= language "shell")
-	 (insert (concat comment "!/usr/bin/sh\n")))
+	 (insert (concat comment "!/bin/sh\n")))
 	((string= language "bash")
 	 (insert (concat comment "!/bin/bash\n")))
 	((string= language "ruby")
