@@ -69,7 +69,7 @@
   (insert "});"))  
 
 (defun davidam-insert-copyright-note(language license name)
-  (interactive "sLanguage (python, bash, lisp, sql, js): \nsLicense (gplv3, fl, wcl): \nsSoftware Name: \n")
+  (interactive "sLanguage (python, bash, lisp, sql, js): \nsLicense (gplv3, mit, fl, wcl): \nsSoftware Name: \n")
   (setq comment "")
   (cond ((or (string-prefix-p language "sh") (string= language "bash") (string-prefix-p language "python"))
 	 (setq comment "# "))
