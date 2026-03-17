@@ -232,13 +232,20 @@ cualquier subrrutina que usa o asigna la marca."
   (interactive "sNumber: " x)
   (cond
    ((string-match "^[1-9]$" x)
-	(message "The number is going from 1 to 9"))
+    (message "The number is going from 1 to 9"))
    ((string-match "^1[0-9]$" x)
-	(message "The number is from 10 to 19"))
+    (message "The number is from 10 to 19"))
    ((string-match "\\(127\\|131\\)" x)
-	(message "The number is 127 or 131"))
+    (message "The number is 127 or 131"))
    ((string-match "^\\([4-9][0-9]\\|100\\)$" x)
-	(message "The number is from 40 to 100"))))
+    (message "The number is from 40 to 100"))))
+
+(defun davidam-0-to-100 (x)
+  "A simple exercise to explain regex applying to range of numbers from zero to one hundred"
+  (interactive "sNumber: " x)
+  (cond
+   ((string-match "^\\(100\\|0\\|[1-9][0-9]\\)$" x)
+    (message "The number is going from 0 to 100"))))
 
 (defun davidam-alfanum (s)
   "A simple exercise to detect an alfanumeric string"
