@@ -141,5 +141,5 @@
 	 (insert (concat comment " MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"))
 	 (insert (concat comment " Working Class License for more details.\n"))
 	 (insert (concat comment " You should have received a copy of the Working Class License along\n"))
-	 (insert (concat comment " with examples about Bash; see the file " filename ". If not, see\n"))
+	 (insert (concat comment " with examples about " language "; see the file " filename ". If not, see\n"))
 	 (insert (concat comment " <https://github.com/davidam/workingclasslicense>.\n")))))
