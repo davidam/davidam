@@ -67,8 +67,8 @@
 ;; (load (concat drupal-el-path "drupal.el"))
 
 ;; ORG-MODE
-(load "~/git/org-mode/contrib/lisp/org-license.el")
-(load "~/git/org-mode/contrib/lisp/org-effectiveness.el")
+(load "~/git/davidam/org-license.el")
+(load "~/git/davidam/org-effectiveness.el")
 (load "~/git/davidam/davidam-skeletons.el")
 (load "~/git/davidam/davidam-inserts.el")
 (load "~/git/davidam/davidam-functions.el")
